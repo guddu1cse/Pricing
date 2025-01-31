@@ -9,7 +9,178 @@
 </head>
 
 <body>
+    <header id="header">
+        <div>
+            <h1>Our Pricing</h1>
+        </div>
 
+        <div id="toggle" onclick="toggle()">
+            <div class="child">Monthly</div>
+            <div class="child">
+                <div id="slider">
+                    <div id="circle"></div>
+                </div>
+            </div>
+            <div class="child">Annualy</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="cards">
+            <div id="basic" class="card basic">
+                <div class="card-header">
+                    <h2>Basic</h2>
+                </div>
+
+                <div class="card-body">
+                    <h3 id="basic-price">$19.99</h3>
+                    <div class="line"></div>
+                    <p id="basic-storage">500 GB Storage</p>
+                    <div class="line"></div>
+                    <p id="basic-users">2 Users Allowed</p>
+                    <div class="line"></div>
+                    <p id="basic-send">Send up to 3 GB</p>
+                </div>
+
+                <div class="card-footer">
+                    <button>LEARN MORE</button>
+                </div>
+            </div>
+
+            <div id="professional" class="card professional">
+                <div class="card-header">
+                    <h2>Professional</h2>
+                </div>
+
+                <div class="card-body">
+                    <h3 id="professional-price">$24.99</h3>
+                    <div class="line"></div>
+                    <p id="professional-storage">1000 GB Storage</p>
+                    <div class="line"></div>
+                    <p id="professional-users">5 Users Allowed</p>
+                    <div class="line"></div>
+                    <p id="professional-send">Send up to 10 GB</p>
+                </div>
+
+                <div class="card-footer">
+                    <button>LEARN MORE</button>
+                </div>
+            </div>
+
+            <div id="master" class="card master">
+                <div class="card-header">
+                    <h2>Master</h2>
+                </div>
+
+                <div class="card-body">
+                    <h3 id="master-price">$19.99</h3>
+                    <div class="line"></div>
+                    <p id="master-storage">500 GB Storage</p>
+                    <div class="line"></div>
+                    <p id="master-users">2 Users Allowed</p>
+                    <div class="line"></div>
+                    <p id="master-send">Send up to 3 GB</p>
+                </div>
+
+                <div class="card-footer">
+                    <button>LEARN MORE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isMonthly = true;
+
+        const plan = {
+            anually: {
+                basic: {
+                    price: 19.99,
+                    storage: 512,
+                    users: 3,
+                    send: 2
+                },
+
+                professional: {
+                    price: 24.99,
+                    storage: 1024,
+                    users: 6,
+                    send: 12
+                },
+
+                master: {
+                    price: 39.99,
+                    storage: 2048,
+                    users: 12,
+                    send: 25
+                }
+            },
+
+            monthly: {
+                basic: {
+                    price: 199.99,
+                    storage: 500,
+                    users: 2,
+                    send: 3
+                },
+
+                professional: {
+                    price: 249.99,
+                    storage: 1000,
+                    users: 5,
+                    send: 10
+                },
+
+                master: {
+                    price: 399.99,
+                    storage: 2000,
+                    users: 10,
+                    send: 20
+                }
+            }
+        }
+
+        render(getPlan());
+        function toggle() {
+            if (isMonthly) {
+                document.getElementById("circle").style.transition = "all 0.3s ease";
+                document.getElementById("circle").style.transform = "translateX(120%)";
+                render(getPlan());
+                isMonthly = false;
+            } else {
+                document.getElementById("circle").style.transition = "all 0.3s ease";
+                document.getElementById("circle").style.transform = "translateX(0%)";
+                render(getPlan());
+                isMonthly = true;
+            }
+        }
+
+        function render(plan) {
+            console.log(plan);
+            document.getElementById("basic-price").innerHTML = "$" + plan.basic.price;
+            document.getElementById("basic-storage").innerHTML = plan.basic.storage + " GB Storage";
+            document.getElementById("basic-users").innerHTML = plan.basic.users + " Users Allowed";
+            document.getElementById("basic-send").innerHTML = "Send up to " + plan.basic.send + " GB";
+
+            document.getElementById("professional-price").innerHTML = "$" + plan.professional.price;
+            document.getElementById("professional-storage").innerHTML = plan.professional.storage + " GB Storage";
+            document.getElementById("professional-users").innerHTML = plan.professional.users + " Users Allowed";
+            document.getElementById("professional-send").innerHTML = "Send up to " + plan.professional.send + " GB";
+
+            document.getElementById("master-price").innerHTML = "$" + plan.master.price;
+            document.getElementById("master-storage").innerHTML = plan.master.storage + " GB Storage";
+            document.getElementById("master-users").innerHTML = plan.master.users + " Users Allowed";
+            document.getElementById("master-send").innerHTML = "Send up to " + plan.master.send + " GB";
+        }
+
+        function getPlan() {
+            if (isMonthly) {
+                return plan.monthly;
+            } else {
+                return plan.anually;
+            }
+        }
+    </script>
 </body>
 
 </html>

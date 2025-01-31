@@ -1,6 +1,8 @@
 * {
   padding: 0%;
   margin: 0%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
 }
 
 body {
@@ -10,20 +12,230 @@ body {
   background-position: top right, bottom left;
   background-size: 400px 400px;
   background-attachment: fixed;
+  height: 100vh;
+  width: 100vw;
 }
 
-/* Tablets (768px - 1024px) */
-@media (max-width: 1024px) {
-  body {
-    background-size: 300px 300px;
-    background-position: top right, bottom left;
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 20%;
+  row-gap: 10%;
+}
+
+#toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10%;
+}
+
+#slider {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50px;
+  height: 25px;
+  background-color: white;
+  border-radius: 50px;
+  background-color: rgb(128, 132, 229);
+  cursor: pointer;
+}
+
+#circle {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+@media (min-width: 1025px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  #cards {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    justify-content: center;
+  }
+
+  .card {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5%;
+    background-color: white;
+    border-radius: 10px;
+    width: 20%;
+    height: 60%;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  h3 {
+    font-size: 40px;
+    font-weight: bolder;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5%;
+    height: 60%;
+    color: black;
+  }
+
+  .professional,
+  .professional > .card-body {
+    position: relative;
+    background-color: rgb(128, 132, 229);
+    color: rgb(60, 60, 137);
+    height: 65%;
+    top: -2.5%;
+    color: white;
+    z-index: 1;
+  }
+
+  #basic {
+    position: relative;
+    left: 1%;
+  }
+
+  #master {
+    position: relative;
+    right: 1%;
+  }
+
+  button {
+    width: 150px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+  }
+
+  .basic > button,
+  .master > button {
+    border: 1px solid rgb(128, 132, 229);
+    color: rgb(128, 132, 229);
+  }
+
+  .professional > button {
+    border: 1px solid white;
+    color: rgb(128, 132, 229);
+  }
+
+  .basic > .card-body > .line,
+  .master > .card-body > .line {
+    height: 0.1%;
+    width: 150%;
+    background-color: black;
+    z-index: 2;
+  }
+
+  .professional > .card-body > .line {
+    height: 0.1%;
+    width: 150%;
+    background-color: white;
   }
 }
 
-/* Phones (max-width: 767px) */
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   body {
     background-size: 200px 200px;
     background-position: top right, bottom left;
+  }
+
+  #cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 350px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  h3 {
+    font-size: 40px;
+    font-weight: bolder;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    color: black;
+    row-gap: 15px;
+  }
+
+  .professional {
+    color: white;
+    background-color: rgb(128, 132, 229);
+  }
+
+  .professional > .card-body {
+    color: white;
+  }
+
+  #basic > .card-body > .line,
+  #master > .card-body > .line {
+    height: 0.1%;
+    width: 150%;
+    background-color: black;
+  }
+
+  #professional > .card-body > .line {
+    height: 0.1%;
+    width: 150%;
+    background-color: white;
+  }
+
+  #basic > .card-footer > button,
+  #master > .card-footer > button {
+    width: 200px;
+    height: 40px;
+    border: 1px solid rgb(128, 132, 229);
+    border-radius: 5px;
+    background-color: rgb(128, 132, 229);
+    color: white;
+    cursor: pointer;
+  }
+
+  #professional > .card-footer > button {
+    width: 200px;
+    height: 40px;
+    border: 1px solid rgb(128, 132, 229);
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
   }
 }
