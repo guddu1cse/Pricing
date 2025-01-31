@@ -12,8 +12,10 @@ body {
   background-position: top right, bottom left;
   background-size: 400px 400px;
   background-attachment: fixed;
+  background-color: rgb(247, 247, 255);
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 }
 
 #header {
