@@ -93,7 +93,7 @@
         let isMonthly = true;
 
         const plan = {
-            anually: {
+            monthly: {
                 basic: {
                     price: 19.99,
                     storage: 512,
@@ -116,7 +116,7 @@
                 }
             },
 
-            monthly: {
+            anually: {
                 basic: {
                     price: 199.99,
                     storage: 500,
@@ -142,17 +142,16 @@
 
         render(getPlan());
         function toggle() {
-            if (isMonthly) {
+            if (!isMonthly) {
                 document.getElementById("circle").style.transition = "all 0.3s ease";
                 document.getElementById("circle").style.transform = "translateX(120%)";
                 render(getPlan());
-                isMonthly = false;
             } else {
                 document.getElementById("circle").style.transition = "all 0.3s ease";
                 document.getElementById("circle").style.transform = "translateX(0%)";
                 render(getPlan());
-                isMonthly = true;
             }
+            isMonthly = !isMonthly;
         }
 
         function render(plan) {

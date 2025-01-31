@@ -123,23 +123,39 @@ body {
     right: 1%;
   }
 
-  button {
-    width: 150px;
-    height: 30px;
-    border-radius: 4px;
-    background-color: rgba(0, 0, 0, 0);
+  .basic > .card-footer > button,
+  .master > .card-footer > button {
+    height: 40px;
+    width: 220px;
+    background-color: rgb(128, 132, 229);
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease;
   }
 
-  .basic > button,
-  .master > button {
+  .basic > .card-footer > button:hover,
+  .master > .card-footer > button:hover {
+    background-color: rgb(247, 247, 255);
     border: 1px solid rgb(128, 132, 229);
-    color: rgb(128, 132, 229);
+    color: black;
   }
 
-  .professional > button {
-    border: 1px solid white;
-    color: rgb(128, 132, 229);
+  .professional > .card-footer > button {
+    border: none;
+    height: 40px;
+    width: 220px;
+    background-color: rgb(247, 247, 255);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .professional > .card-footer > button:hover {
+    background-color: rgb(128, 132, 229);
+    border: 1px solid rgb(247, 247, 255);
+    color: white;
   }
 
   .basic > .card-body > .line,
@@ -161,6 +177,8 @@ body {
   body {
     background-size: 200px 200px;
     background-position: top right, bottom left;
+    background-color: rgb(247, 247, 255);
+    overflow: visible;
   }
 
   #cards {
