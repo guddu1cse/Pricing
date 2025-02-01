@@ -6,8 +6,8 @@
 }
 
 body {
-  background-image: url("./resource/bg-top.svg"),
-    url("./resource/bg-bottom.svg");
+  background-image: url("../resource/bg-top.svg"),
+    url("../resource/bg-bottom.svg");
   background-repeat: no-repeat, no-repeat;
   background-position: top right, bottom left;
   background-size: 400px 400px;
