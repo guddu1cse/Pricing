@@ -41,9 +41,12 @@ body {
   justify-content: flex-start;
   width: 50px;
   height: 25px;
-  background-color: white;
   border-radius: 50px;
-  background-color: rgb(128, 132, 229);
+  background-image: linear-gradient(
+    to right,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
   cursor: pointer;
 }
 
@@ -102,11 +105,26 @@ body {
     color: black;
   }
 
-  .professional,
   .professional > .card-body {
     position: relative;
-    background-color: rgb(128, 132, 229);
-    color: rgb(60, 60, 137);
+
+    color: rgba(60, 60, 137, 0);
+    height: 65%;
+    top: -2.5%;
+    color: white;
+    z-index: 1;
+  }
+
+  .professional {
+    position: relative;
+
+    background-image: linear-gradient(
+      to bottom,
+      hsl(236, 72%, 79%),
+      hsl(237, 63%, 64%)
+    );
+
+    color: rgba(60, 60, 137, 0);
     height: 65%;
     top: -2.5%;
     color: white;
@@ -218,7 +236,11 @@ body {
 
   .professional {
     color: white;
-    background-color: rgb(128, 132, 229);
+    background-image: linear-gradient(
+      to bottom,
+      hsl(236, 72%, 79%),
+      hsl(237, 63%, 64%)
+    );
   }
 
   .professional > .card-body {
@@ -242,11 +264,12 @@ body {
   #master > .card-footer > button {
     width: 200px;
     height: 40px;
-    border: 1px solid rgb(128, 132, 229);
-    border-radius: 5px;
     background-color: rgb(128, 132, 229);
+    border: 1px solid rgb(128, 132, 229);
     color: white;
+    border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease;
   }
 
   #professional > .card-footer > button {
@@ -257,5 +280,18 @@ body {
     background-color: white;
     color: black;
     cursor: pointer;
+  }
+
+  #basic > .card-footer > button:hover,
+  #master > .card-footer > button:hover {
+    background-color: rgb(247, 247, 255);
+    border: 1px solid rgb(128, 132, 229);
+    color: black;
+  }
+
+  #professional > .card-footer > button:hover {
+    background-color: rgb(128, 132, 229);
+    border: 1px solid white;
+    color: white;
   }
 }
