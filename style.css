@@ -1,3 +1,12 @@
+:root {
+  --box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  --linear-gradient: linear-gradient(
+    to bottom right,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+}
+
 input {
   display: none;
 }
@@ -81,6 +90,7 @@ body {
   display: none;
 }
 
+/* #header:has(#checkbox:checked) ~ #container .monthly */
 #header:has(#checkbox:checked)
   ~ #container
   > #cards
@@ -90,6 +100,7 @@ body {
   display: none;
 }
 
+/* #header:has(#checkbox:checked) ~ #container .anually */
 #header:has(#checkbox:checked)
   ~ #container
   > #cards
@@ -127,7 +138,7 @@ body {
     border-radius: 10px;
     width: 20%;
     height: 60%;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--box-shadow);
   }
 
   h3 {
@@ -158,11 +169,7 @@ body {
   .professional {
     position: relative;
 
-    background-image: linear-gradient(
-      to bottom,
-      hsl(236, 72%, 79%),
-      hsl(237, 63%, 64%)
-    );
+    background-image: var(--linear-gradient);
 
     color: rgba(60, 60, 137, 0);
     height: 65%;
@@ -193,6 +200,7 @@ body {
     transition: all 0.3s ease;
   }
 
+  /* :is(.master, .basic) > .card-footer > button:hover */
   .basic > .card-footer > button:hover,
   .master > .card-footer > button:hover {
     background-color: rgb(247, 247, 255);
@@ -211,7 +219,7 @@ body {
   }
 
   .professional > .card-footer > button:hover {
-    background-color: rgb(128, 132, 229);
+    background-color: rgba(128, 132, 229, 0);
     border: 1px solid rgb(247, 247, 255);
     color: white;
   }
@@ -268,7 +276,7 @@ body {
     height: 350px;
     border-radius: 10px;
     margin-bottom: 20px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--box-shadow);
   }
 
   h3 {
@@ -288,11 +296,7 @@ body {
 
   .professional {
     color: white;
-    background-image: linear-gradient(
-      to bottom,
-      hsl(236, 72%, 79%),
-      hsl(237, 63%, 64%)
-    );
+    background-image: var(--linear-gradient);
   }
 
   .professional > .card-body {
